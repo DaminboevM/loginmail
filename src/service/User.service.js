@@ -50,7 +50,7 @@ export class UserService {
 
         if (!user.isValid) {
             const token = jwt.sign({ email: user.email })
-            const url = 'http://localhost:3000/api/confirem/' + token
+            const url = 'https://loginmail.onrender.com/api/confirem/' + token
             
             const transport = nodemailer.createTransport({
                 service: 'gmail',
@@ -72,7 +72,7 @@ export class UserService {
 
             await transport.sendMail(optionGmail)
 
-            throw new Error("Emailni tasdiqlasjh uchun yana havola yuborldi !")
+            return "Emailni tasdiqlasjh uchun yana havola yuborldi !"
         }
 
         const accessToken = jwt.sign({ name: user.name, email: user.email, _id: user._id })
