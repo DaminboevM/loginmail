@@ -55,7 +55,7 @@ export class UserService {
             const transport = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
-                    user: process.env.CHROME_PAROL,
+                    user: process.env.CHROME_ACC,
                     pass: process.env.CHROME_PAROL
                 }
             })
